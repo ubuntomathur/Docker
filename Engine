@@ -14,3 +14,44 @@ drwx------. 2 root root   6 Apr  5 22:51 swarm
 drwx------. 2 root root   6 Apr  5 22:51 tmp
 drwx-----x. 2 root root  50 Apr  5 22:51 volumes
 [root@jenkins ~]#
+$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+How to login in docker 
+[root@jenkins ~]# docker login -u vikasmathur001
+
+i Info → A Personal Access Token (PAT) can be used instead.
+         To create a PAT, visit https://app.docker.com/settings
+
+
+Password:
+
+WARNING! Your credentials are stored unencrypted in '/root/.docker/config.json'.
+Configure a credential helper to remove this warning. See
+https://docs.docker.com/go/credential-store/
+
+Login Succeeded
+[root@jenkins ~]# ls -la
+total 32
+dr-xr-x---.  4 root root 178 Apr  6 00:06 .
+dr-xr-xr-x. 18 root root 235 Apr  5 19:33 ..
+-rw-------.  1 root root 880 Apr  5 19:37 anaconda-ks.cfg
+-rw-------.  1 root root 654 Apr  5 22:52 .bash_history
+-rw-r--r--.  1 root root  18 Aug 10  2021 .bash_logout
+-rw-r--r--.  1 root root 141 Aug 10  2021 .bash_profile
+-rw-r--r--.  1 root root 429 Aug 10  2021 .bashrc
+-rw-r--r--.  1 root root 100 Aug 10  2021 .cshrc
+drwx------.  2 root root  25 Apr  6 00:06 .docker
+-rw-------.  1 root root  20 Apr  5 22:51 .lesshst
+drwx------.  2 root root  29 Apr  5 22:42 .ssh
+-rw-r--r--.  1 root root 129 Aug 10  2021 .tcshrc
+[root@jenkins ~]# cd .docker/
+[root@jenkins .docker]# ls
+config.json
+[root@jenkins .docker]# cat config.json
+{
+        "auths": {
+                "https://index.docker.io/v1/": {
+                        "auth": "dmlrYXNtYXRodXIwMDE6TUB0cml4IzAwMg=="
+                }
+        }
+}[root@jenkins .docker]#
