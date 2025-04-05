@@ -1,0 +1,16 @@
+Docker engine library: or home dir
+
+[root@jenkins ~]#  ls -l /var/lib/docker/
+total 4
+drwx--x--x. 3 root root 123 Apr  5 22:51 buildkit
+drwx--x---. 2 root root   6 Apr  5 22:51 containers
+-rw-------. 1 root root  36 Apr  5 22:51 engine-id
+drwx------. 3 root root  22 Apr  5 22:51 image
+drwxr-x---. 3 root root  19 Apr  5 22:51 network
+drwx--x---. 3 root root  40 Apr  5 22:51 overlay2          --------#File System #####
+drwx------. 3 root root  17 Apr  5 22:51 plugins
+drwx------. 2 root root   6 Apr  5 22:51 runtimes
+drwx------. 2 root root   6 Apr  5 22:51 swarm
+drwx------. 2 root root   6 Apr  5 22:51 tmp
+drwx-----x. 2 root root  50 Apr  5 22:51 volumes
+[root@jenkins ~]#
