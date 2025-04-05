@@ -72,3 +72,6 @@ Containers are the runnable instances of those images.
 The Docker daemon is the brain that manages all Docker operations.
 
 
+A Docker image is immutable, meaning:
+
+Once the image is created, you can't change it directly.
