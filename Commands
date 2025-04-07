@@ -174,3 +174,7 @@ CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
 CONTAINER ID   IMAGE          COMMAND     CREATED          STATUS                       PORTS     NAMES
 f74d77261daf   aded1e1a5b37   "/bin/sh"   24 minutes ago   Exited (137) 6 seconds ago             vikasmathur
 [root@jenkins ~]#
+
+
+
+podman logs 63ba2016885b > cbis_manager.log 2>&1, this is way to collect the logs 
