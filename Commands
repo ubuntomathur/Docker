@@ -178,3 +178,98 @@ f74d77261daf   aded1e1a5b37   "/bin/sh"   24 minutes ago   Exited (137) 6 second
 HOW TO COLLECT LOGS 
 
 podman logs 63ba2016885b > abc.log 2>&1, this is way to collect the logs 
+
+
+This tells the shell to redirect file descriptor 2 (stderr) (i.e., error messages) to file descriptor 1 (stdout) — so both logs and errors go into the same file.
+
+
+#################################
+
+How to remove docker containers 
+
+[root@jenkins ~]# docker rm -f  55246c3f7815 199963fb71d7 13f139c65502 d353964ca3b2 ddb518285003 d021878fbbca  f74d77261daf
+55246c3f7815
+199963fb71d7
+13f139c65502
+d353964ca3b2
+ddb518285003
+d021878fbbca
+f74d77261daf
+[root@jenkins ~]#
+
+
+
+
+
+
+
+
+
+
+
+
+
+HOW to Do port forward in container 
+
+
+
+
+
+[root@jenkins ~]# docker pull nginx
+Using default tag: latest
+latest: Pulling from library/nginx
+6e909acdb790: Pull complete
+5eaa34f5b9c2: Pull complete
+417c4bccf534: Pull complete
+e7e0ca015e55: Pull complete
+373fe654e984: Pull complete
+97f5c0f51d43: Pull complete
+c22eb46e871a: Pull complete
+Digest: sha256:124b44bfc9ccd1f3cedf4b592d4d1e8bddb78b51ec2ed5056c52d3692baebc19
+Status: Downloaded newer image for nginx:latest
+docker.io/library/nginx:latest
+[root@jenkins ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND       CREATED          STATUS          PORTS     NAMES
+4e6637e2daab   eeb6ee3f44bd   "/bin/bash"   17 minutes ago   Up 17 minutes             test01
+
+[root@jenkins ~]# docker images
+REPOSITORY   TAG       IMAGE ID       CREATED        SIZE
+alpine       latest    aded1e1a5b37   7 weeks ago    7.83MB
+nginx        latest    53a18edff809   2 months ago   192MB
+ubuntu       latest    a04dc4851cbc   2 months ago   78.1MB
+centos       7         eeb6ee3f44bd   3 years ago    204MB
+[root@jenkins ~]# docker rm --name webserver -dit -P 53a18edff809
+
+[root@jenkins ~]# docker run --name webserver -dit -P 53a18edff809
+b82afa8d98850c487fd05d0fe25667a7b1a9bef8a92d904445cf0e71b3cd7f65
+[root@jenkins ~]# docker ps -a
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                       NAMES
+b82afa8d9885   53a18edff809   "/docker-entrypoint.…"   5 seconds ago    Up 4 seconds    0.0.0.0:32768->80/tcp, [::]:32768->80/tcp   webserver
+4e6637e2daab   eeb6ee3f44bd   "/bin/bash"              18 minutes ago   Up 18 minutes                                               test01
+
+[root@jenkins ~]# curl http://localhost:32768
+<!DOCTYPE html>
+<html>
+<head>
+<title>Welcome to nginx!</title>
+<style>
+html { color-scheme: light dark; }
+body { width: 35em; margin: 0 auto;
+font-family: Tahoma, Verdana, Arial, sans-serif; }
+</style>
+</head>
+<body>
+<h1>Welcome to nginx!</h1>
+<p>If you see this page, the nginx web server is successfully installed and
+working. Further configuration is required.</p>
+
+<p>For online documentation and support please refer to
+<a href="http://nginx.org/">nginx.org</a>.<br/>
+Commercial support is available at
+<a href="http://nginx.com/">nginx.com</a>.</p>
+
+<p><em>Thank you for using nginx.</em></p>
+</body>
+</html>
+[root@jenkins ~]#
+
