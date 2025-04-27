@@ -415,3 +415,17 @@ Untagged: centos:7
 Untagged: centos@sha256:be65f488b7764ad3638f236b7b515b3678369a5124c47b8d32916d6487418ea4
 Deleted: sha256:eeb6ee3f44bd0b5103bb561b4c16bcb82328cfe5809ab675bb17ab3a16c517c9
 [root@jenkins ~]#
+
+
+
+WE Can use  use ports in the range of 32768 to 65535 with Docker 
+
+
+
+
+
+
+
+
+
+
