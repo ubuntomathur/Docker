@@ -125,19 +125,19 @@ f74d77261dafda512d361a6bfb31a73c4a65ef46d9557abe77f4e10aad0a1b8e
 CONTAINER ID   IMAGE          COMMAND     CREATED         STATUS         PORTS     NAMES
 f74d77261daf   aded1e1a5b37   "/bin/sh"   7 seconds ago   Up 7 seconds             vikasmathu
 
-```
+
 docker run --name vikasmathur -dit aded1e1a5b37
 **Explanation**:
 
 - **docker run**: Starts a new Docker container.
 - **--name vikasmathur**: Names the container `vikasmathur`.
 - **-d**: Runs the container in detached mode (in the background).
-- **-i**: Keeps the container's standard input (STDIN) open.
+- **-i**: Keeps the container's standard input (STDIN) open or Interactive Terminal 
 - **-t**: Allocates a pseudo-TTY (gives the container a terminal).
 - **aded1e1a5b37**: The image ID used to create the container.
 
 
-```
+
 
 
 
