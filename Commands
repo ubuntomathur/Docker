@@ -209,6 +209,13 @@ podman logs 63ba2016885b > abc.log 2>&1, this is way to collect the logs
 This tells the shell to redirect file descriptor 2 (stderr) (i.e., error messages) to file descriptor 1 (stdout) — so both logs and errors go into the same file.
 
 
+
+
+podman logs 63ba2016885b: This fetches the logs for the container with ID 63ba2016885b.
+
+> abc.log: Redirects the standard output (stdout) of the logs to a file named abc.log.
+
+2>&1: Redirects standard error (stderr) to the same location as standard output (stdout), so both stdout and stderr will be saved in abc.log.
 #################################
 
 How to remove docker containers 
